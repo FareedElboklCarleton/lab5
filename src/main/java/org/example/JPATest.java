@@ -18,8 +18,8 @@ public class JPATest {
     @Transactional
     public void performJPA() {
         // Save the buddies first because the relationship doesn't cascade saves
-        BuddyInfo buddy1 = buddyInfoRepository.save(new BuddyInfo("John", "613-555-1234"));
-        BuddyInfo buddy2 = buddyInfoRepository.save(new BuddyInfo("Jane", "613-555-5678"));
+        BuddyInfo buddy1 = buddyInfoRepository.save(new BuddyInfo("John", "613-555-1234", "100 College Street, Ottawa"));
+        BuddyInfo buddy2 = buddyInfoRepository.save(new BuddyInfo("Jane", "613-555-5678", "200 Bank Street, Ottawa"));
 
         AddressBook addressBook = new AddressBook();
         addressBook.addBuddy(buddy1);

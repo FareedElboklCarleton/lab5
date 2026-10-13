@@ -44,7 +44,7 @@ class AddressBookApiTest {
         var response = client.post()
                 .uri("/api/buddies")
                 .contentType(MediaType.APPLICATION_JSON)
-                .body(Map.of("name", "Sam", "phoneNumber", "613-555-1234"))
+                .body(Map.of("name", "Sam", "phoneNumber", "613-555-1234", "address", "123 Main Street, Ottawa"))
                 .exchange()
                 .expectStatus().isCreated()
                 .expectHeader().exists(HttpHeaders.LOCATION)
@@ -60,7 +60,8 @@ class AddressBookApiTest {
                 .expectStatus().isOk()
                 .expectBody()
                 .jsonPath("$.name").isEqualTo("Sam")
-                .jsonPath("$.phoneNumber").isEqualTo("613-555-1234");
+                .jsonPath("$.phoneNumber").isEqualTo("613-555-1234")
+                .jsonPath("$.address").isEqualTo("123 Main Street, Ottawa");
     }
 
     @Test

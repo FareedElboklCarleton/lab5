@@ -21,12 +21,14 @@
             <tr>
                 <th scope="col">Name</th>
                 <th scope="col">Phone number</th>
+                <th scope="col">Address</th>
             </tr>
         </thead>
         <tbody>
             <tr th:each="buddy : ${buddies}">
                 <td th:text="${buddy.name}"></td>
                 <td th:text="${buddy.phoneNumber}"></td>
+                <td th:text="${buddy.address}"></td>
             </tr>
         </tbody>
     </table>
