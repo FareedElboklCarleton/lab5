@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Address Books</title>
+</head>
+<body>
+    <h1>Address Books</h1>
+
+    <nav aria-label="Main navigation">
+        <a th:href="@{/}">Home</a>
+        <a th:href="@{/addressbooks}">Address books</a>
+        <a th:href="@{/buddies}">Buddies</a>
+    </nav>
+
+    <p th:if="${#lists.isEmpty(addressBooks)}">No address books yet</p>
+
+    <table th:unless="${#lists.isEmpty(addressBooks)}">
+        <thead>
+            <tr>
+                <th scope="col">Address book</th>
+                <th scope="col">Buddy count</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="addressBook : ${addressBooks}">
+                <td>
+                    <a th:href="@{/addressbooks/{id}(id=${addressBook.id})}"
+                       th:text="|Address Book ${addressBook.id}|"></a>
+                </td>
+                <td th:text="${#lists.size(addressBook.buddies)}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
