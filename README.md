@@ -1,4 +1,4 @@
-# Lab 5
+# Lab 6: The Client Side
 
 [![Java CI with Maven](https://github.com/FareedElboklCarleton/lab5/actions/workflows/maven.yml/badge.svg?branch=main)](https://github.com/FareedElboklCarleton/lab5/actions/workflows/maven.yml)
 
